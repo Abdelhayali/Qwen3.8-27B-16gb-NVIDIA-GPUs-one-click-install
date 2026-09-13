@@ -734,7 +734,7 @@ def parse_request(body):
     if not messages or not isinstance(messages, list):
         return None, "`messages` (list) is required"
     max_tokens = int(body.get("max_tokens") or
-                     body.get("max_completion_tokens") or 1024)
+                     body.get("max_completion_tokens") or 16384)
     temperature = float(body.get("temperature", 0.6))
     top_p = float(body.get("top_p", 0.95))
     top_k = int(body.get("top_k", 20))
